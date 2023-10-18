@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:4.2.0'
+}
+
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        pom.groupId = 'com.conways.autoanalytics.plugin'
+//        pom.artifactId = 'bfclick'
+//        pom.version = '1.1.0-test2'
+//        repository(url: 'http://xxx.com/repository/releases/') {
+//            authentication(userName: 'xxx', password: 'xxx')
+//        }
+//        snapshotRepository(url: 'http://xxx.com/repository/snapshots/') {
+//            authentication(userName: 'xxx', password: 'xxx')
+//        }
+//        pom.project {
+//            description "bfclick"
+//        }
+//    }
+//}
+
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../mavenLocal'))
+        pom.groupId = 'com.conways.autoanalytics.plugin'
+        pom.artifactId = 'bfclick'
+        pom.version = '1.0.0'
+    }
+}

@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:4.2.0'
+}
+
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        pom.groupId = 'com.conways.autoanalytics.plugin'
+//        pom.artifactId = 'apm'
+//        pom.version = '1.0.0'
+//        repository(url: 'http://xxxxx.com/repository/releases/') {
+//            authentication(userName: 'xxx', password: 'xxx')
+//        }
+//        snapshotRepository(url: 'http://xxxx.com/repository/snapshots/') {
+//            authentication(userName: 'xxx', password: 'xxx')
+//        }
+//        pom.project {
+//            description "apm"
+//        }
+//    }
+//}
+
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../mavenLocal'))
+        pom.groupId = 'com.conways.autoanalytics.plugin'
+        pom.artifactId = 'apm'
+        pom.version = '1.0.0'
+    }
+}

@@ -1,0 +1,7 @@
+include ':app'
+include ':autoAnalyticsClickPlugin'
+include ':autoAnalyticsClickSdk'
+include ':autoAnalyticsBFClickPlugin'
+include ':autoAnalyticsBFClickSdk'
+include ':autoAnalyticsApmPlugin'
+include ':autoAnalyticsApmSdk'

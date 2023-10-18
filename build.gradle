@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenLocal()
+        maven{
+            url uri('mavenLocal')
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath 'com.conways.autoanalytics.plugin:click:1.0.0'
+        classpath 'com.conways.autoanalytics.plugin:apm:1.0.0'
+        classpath 'com.conways.autoanalytics.plugin:bfclick:1.0.0'
+    }
+
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenLocal()
+        maven{
+            url uri('mavenLocal')
+        }
+    }
+}
+
+
+
