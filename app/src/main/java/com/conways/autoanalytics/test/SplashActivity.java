@@ -3,7 +3,7 @@ package com.conways.autoanalytics.test;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import android.text.SpannableString;
@@ -41,7 +41,7 @@ public class SplashActivity extends Activity implements View.OnClickListener, Ra
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_activity_main);
+        setContentView(R.layout.activity_main);
 
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,21 +123,7 @@ public class SplashActivity extends Activity implements View.OnClickListener, Ra
 
     @Override
     public void onClick(View v) {
-
-       AlertDialog dialog=new AlertDialog.Builder(this)
-               .setMessage("test")
-               .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       dialog.dismiss();
-                   }
-               })
-               .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       dialog.dismiss();
-                   }
-               }).show();
+        startActivity(new Intent(this,MainActivity3.class));
 
     }
 
