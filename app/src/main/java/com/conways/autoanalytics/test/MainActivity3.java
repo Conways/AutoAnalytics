@@ -80,24 +80,25 @@ public class MainActivity3 extends Activity {
 
 
     private void finishDelay(){
+        setTheme(R.style.appTheme);
         getWindow().setDimAmount(1f);
         getWindow().getDecorView().setAlpha(1f);
         startTranslateAni();
     }
 
     private void startTranslateAni(){
-        AnimationSet animationSet=new AnimationSet(true);
-        TranslateAnimation translateAnimation=new TranslateAnimation(
-                this.getResources().getDisplayMetrics().widthPixels, 0, 0, 0);
+        TranslateAnimation translateAnimation = new TranslateAnimation(
+                Animation.RELATIVE_TO_PARENT, 1f,
+                Animation.RELATIVE_TO_PARENT, 0f,
+                Animation.RELATIVE_TO_PARENT, 0,
+                Animation.RELATIVE_TO_PARENT, 0);
         translateAnimation.setDuration(250L);
         translateAnimation.setRepeatCount(0);
-        animationSet.addAnimation(translateAnimation);
-        animationSet.setRepeatCount(0);
         View view=getWindow().getDecorView();
         if (view instanceof ViewGroup){
             ViewGroup vg= (ViewGroup) view;
-            if (vg.getChildCount()>0){
-                vg.getChildAt(0).startAnimation(animationSet);
+            for (int i = 0; i < vg.getChildCount(); i++) {
+                vg.getChildAt(i).startAnimation(translateAnimation);
             }
         }
     }

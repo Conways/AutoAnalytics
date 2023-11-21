@@ -2,27 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.conways.autoanalytics.test">
+
     <application
-        android:name="com.conways.autoanalytics.test.BPApplication"
+        android:name=".BPApplication"
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/appTheme"
         android:largeHeap="true"
-        android:supportsRtl="true">
-        <activity android:name="com.conways.autoanalytics.test.SplashActivity"
-            >
+        android:supportsRtl="true"
+        android:theme="@style/appTheme">
+        <activity
+            android:name=".UIActivity"
+            android:exported="false" />
+
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.conways.autoanalytics.test.MainActivity3"
+            android:name=".MainActivity3"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/delayRender">
-        </activity>
+            android:theme="@style/delayRender"
+            android:windowSoftInputMode="adjustPan"/>
     </application>
+
 </manifest>

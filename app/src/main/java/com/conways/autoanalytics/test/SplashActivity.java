@@ -48,6 +48,7 @@ public class SplashActivity extends Activity implements View.OnClickListener, Ra
             public void onClick(View v) {
                 Log.d("test", "onClick: "+v.getContext()+temp);
                 lambdaSimple(test5,savedInstanceState,v);
+                startActivity(new Intent(SplashActivity.this,UIActivity.class));
             }
         });
 

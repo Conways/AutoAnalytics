@@ -33,5 +33,6 @@ dependencies {
     implementation project(path: ':autoAnalyticsClickSdk')
     implementation project(path: ':autoAnalyticsApmSdk')
     implementation project(path: ':autoAnalyticsBFClickSdk')
+//    implementation 'com.google.android.material:material:1.10.0'
     testImplementation 'junit:junit:4.12'
 }
